@@ -52,12 +52,12 @@
         button {
             background-color: #008CBA;
             color: white;
-            padding: 10px 20px; /* 높이 10px로 줄임 */
-            margin: 0 10px; /* 버튼 사이의 간격 */
+            padding: 10px 20px;
+            margin: 0 10px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 14px; /* 폰트 크기 14px로 줄임 */
+            font-size: 14px;
         }
         button:hover {
             background-color: #005f73;
@@ -69,29 +69,22 @@
     <header>
         <h1>도서 관리 시스템에 오신 것을 환영합니다!</h1>
     </header>
-
     <div class="login-container">
         <h2>로그인</h2>
         <form action="/members/login" method="POST">
             <label for="email">이메일:</label>
             <input type="text" id="email" name="email" placeholder="이메일을 입력하세요." required />
-
             <label for="pwd">비밀번호:</label>
-            <input type="pwd" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요." required />
-
+            <input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요." required />
             <button type="submit">로그인</button>
         </form>
-
-        <!-- 로그인 실패 메시지 표시 영역 -->
+        <!-- 로그인 실패 시 에러 메시지 표시 (검은 글씨) -->
         <div class="error-message" th:if="${error != null}" th:text="${error}"></div>
     </div>
-
-    <!-- 회원가입 및 도서목록 버튼 -->
     <div class="button-container">
         <button onclick="window.location.href='/members/join'">회원가입</button>
         <button onclick="window.location.href='/books'">도서목록</button>
     </div>
-
 </div>
 </body>
 </html>
